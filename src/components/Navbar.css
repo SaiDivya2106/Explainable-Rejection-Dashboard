@@ -1,0 +1,50 @@
+.custom-navbar {
+  background: linear-gradient(90deg, #2563eb, #4f46e5);
+  padding: 12px 20px;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+/* Each link */
+.nav-item {
+  position: relative;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-item:hover {
+  color: #e0e7ff;
+}
+
+/* Underline animation */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Active link highlight */
+.active-link {
+  font-weight: 700;
+}
+
+.active-link::after {
+  width: 100%;
+  background: #ffd700;
+}
