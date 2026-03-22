@@ -7,25 +7,25 @@ import Transcript from "./pages/Transcript";
 import Competency from "./pages/Competency";
 import Bias from "./pages/Bias";
 import Insights from "./pages/Insights";
+import CandidateView from "./pages/CandidateView";
 
 function App() {
-  // ✅ Global state to share data
   const [transcriptData, setTranscriptData] = useState("");
 
   return (
     <BrowserRouter>
       <Navbar />
 
+      {/* ✅ ALL routes must be inside this */}
       <Routes>
+
         <Route path="/" element={<Dashboard />} />
 
-        {/* ✅ Pass setter */}
         <Route
           path="/transcript"
           element={<Transcript setTranscriptData={setTranscriptData} />}
         />
 
-        {/* ✅ Pass data */}
         <Route
           path="/competency"
           element={<Competency transcriptData={transcriptData} />}
@@ -40,6 +40,13 @@ function App() {
           path="/insights"
           element={<Insights transcriptData={transcriptData} />}
         />
+
+        {/* ✅ YOUR NEW ROUTE */}
+        <Route
+          path="/candidate"
+          element={<CandidateView transcriptData={transcriptData} />}
+        />
+
       </Routes>
     </BrowserRouter>
   );

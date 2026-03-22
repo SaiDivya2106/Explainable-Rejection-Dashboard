@@ -29,6 +29,7 @@ function Transcript({ setTranscriptData }) {
 
     // store data for next page
     setTranscriptData(text);
+    localStorage.setItem("transcript", text);
   };
 
   return (
@@ -47,9 +48,15 @@ function Transcript({ setTranscriptData }) {
           onChange={(e) => setText(e.target.value)}
         />
 
-        <button className="btn btn-primary w-100" onClick={analyzeText}>
-          Analyze Transcript
-        </button>
+       <button
+  className="btn btn-primary w-100"
+  onClick={() => {
+    analyzeText();
+    navigate("/insights"); // or competency if you want
+  }}
+>
+  Analyze Transcript
+</button>
       </div>
 
       {/* Analysis Result */}

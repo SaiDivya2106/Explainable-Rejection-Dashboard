@@ -7,13 +7,14 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg custom-navbar px-4">
 
-      {/* Left Logo */}
+      {/* Logo */}
       <span className="navbar-brand fw-bold text-white">
         🧠 Interview Insights AI
       </span>
 
       {/* Center Links */}
       <div className="mx-auto nav-links">
+
         <Link 
           className={`nav-item ${location.pathname === "/" ? "active-link" : ""}`} 
           to="/"
@@ -48,12 +49,18 @@ function Navbar() {
         >
           Insights
         </Link>
+
       </div>
 
-      {/* Right User */}
-      <div className="text-white fw-semibold">
+      {/* ✅ RIGHT SIDE FIXED */}
+      <Link
+        to="/candidate"
+        className={`text-white fw-semibold text-decoration-none ${
+          location.pathname === "/candidate" ? "active-link" : ""
+        }`}
+      >
         👤 Candidate View
-      </div>
+      </Link>
 
     </nav>
   );
